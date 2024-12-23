@@ -33,8 +33,8 @@ basis 0 0 0 &
 basis 0.333 0 0 &
 basis 0.5 0.5 0 &
 basis 0.833 0.5 0
-variable x_0 equal 0
-variable x_f equal 200
+variable x_0 equal 1
+variable x_f equal 201
 variable y_0 equal 1
 variable y_f equal 20
 variable x equal ${x_f}-${x_0}
@@ -51,7 +51,7 @@ region fixed_atoms2 block ${fixed2_xi} ${x_f} ${y_0} ${y_f} -0.1 0.1 units box
 group fixed_atoms1 region fixed_atoms1
 group fixed_atoms2 region fixed_atoms2
 group fixed_atoms union fixed_atoms1 fixed_atoms2
-fix freeze fixed_atoms setforce 0.0 0.0 0.0
+#fix freeze fixed_atoms setforce 0.0 0.0 0.0
 
 pair_style airebo 3.0
 pair_coeff * * CH.airebo C
