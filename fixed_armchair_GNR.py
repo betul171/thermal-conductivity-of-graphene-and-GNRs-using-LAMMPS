@@ -1,5 +1,7 @@
 ### Fixed boundaries, armchair edges
 
+### Armchair
+
 from lammps import lammps
 
 lmp = lammps()
@@ -34,7 +36,7 @@ basis 0.333 0 0 &
 basis 0.5 0.5 0 &
 basis 0.833 0.5 0
 variable x_0 equal 1
-variable x_f equal 201
+variable x_f equal 200
 variable y_0 equal 1
 variable y_f equal 20
 variable x equal ${x_f}-${x_0}
