@@ -35,8 +35,8 @@ basis 0.5 0.5 0 &
 basis 0.833 0.5 0
 variable x_0 equal 0
 variable x_f equal 20
-variable y_0 equal 0
-variable y_f equal 200
+variable y_0 equal ylo
+variable y_f equal yhi
 variable x equal ${x_f}-${x_0}
 variable y equal ${y_f}-${y_0}
 variable thickness equal 3.35
