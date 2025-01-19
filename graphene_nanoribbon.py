@@ -15,7 +15,14 @@ variable    d equal $p*$s       # dump interval
 variable    r equal 10000     # Run
 variable    ir equal 8000     # Equilibration run 
 
-## with  better certainty
+## with better certainty
+# variable    p equal 500         # correlation length
+# variable    s equal 40          # sample interval
+# variable    d equal $p*$s       # dump interval
+# variable    r equal 20000     # Run
+# variable    ir equal 10000     # Equilibration run 
+
+## with even better certainty
 # variable    p equal 2500         # correlation length
 # variable    s equal 40          # sample interval
 # variable    d equal $p*$s       # dump interval
