@@ -1,5 +1,7 @@
 # Calculate thermal conductivity of zigzag GNR.
 
+### Zigzag
+
 from lammps import lammps
 
 lmp = lammps()
