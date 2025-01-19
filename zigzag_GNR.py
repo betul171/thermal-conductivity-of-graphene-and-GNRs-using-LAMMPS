@@ -61,7 +61,7 @@ minimize 1.0e-6 1.0e-8 1000 10000
 timestep ${dt}
 thermo $d
 thermo_style custom step temp pe ke etotal
-dump 1 all custom 10000 nrr.dump id type x y z vx vy vz
+dump 1 all custom 10000 zigzag_nr.dump id type x y z vx vy vz
 
 
 velocity all create 10.0 48279
@@ -76,7 +76,7 @@ run ${ir}
 undump 1
 
 reset_timestep 0
-dump myDump all atom 10000 dump_reset_nr_fixed.lammpstrj
+dump myDump all atom 10000 dump_reset_zigzag_nr.lammpstrj
 
 
 compute ke all ke/atom
@@ -99,8 +99,6 @@ variable     k33 equal trap(f_JJ[5])*${scale}
 thermo_style custom step temp v_k11 v_k22 v_k33
 run          $r
 
-variable     k equal (v_k11+v_k22+v_k33)/3.0 ## think about that part
-print        "average thermal conductivity: $k[W/mK] @ $T K"
 print        "kxx: ${k11}[W/mK]"
 print        "kyy: ${k22}[W/mK]"
 print        "kzz: ${k33}[W/mK]"     
