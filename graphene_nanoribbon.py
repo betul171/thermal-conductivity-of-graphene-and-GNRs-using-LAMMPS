@@ -29,6 +29,12 @@ variable    ir equal 8000     # Equilibration run
 # variable    r equal 100000     # Run
 # variable    ir equal 10000     # Equilibration run 
 
+## with even better certainty
+# variable    p equal 10000         # correlation length
+# variable    s equal 10          # sample interval
+# variable    d equal $p*$s       # dump interval
+# variable    r equal 100000     # Run
+# variable    ir equal 10000     # Equilibration run 
 
 variable    kB equal 1.3806504e-23    # [J/K] Boltzmann
 variable    eV2J equal 1.60217663e-19
