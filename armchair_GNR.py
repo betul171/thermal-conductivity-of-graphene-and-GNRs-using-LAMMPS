@@ -25,7 +25,7 @@ variable    convert equal ${eV2J}*${eV2J}/${ps2s}/${A2m}
 dimension 3
 boundary p p p 
 atom_style atomic
-region box block 0 25 -15 30 -20 20
+region box block -1 24 -15 30 -20 20
 create_box 1 box
 mass 1 12.011
 lattice custom 1.42 a1 3 0 0 a2 0 1.732 0 a3 0 0 20 &
