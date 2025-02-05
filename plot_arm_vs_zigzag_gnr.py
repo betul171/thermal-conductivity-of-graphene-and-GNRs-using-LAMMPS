@@ -1,4 +1,4 @@
-# PLOT THE GRAPH OF ARMCHAIR VS ZIGZAG GNRs:
+# PLOT
 #Thermal conductivity of rectangular GNRs with armchair (solid line) and zigzag (dashed line) long edges versus their length at 300K.
 
 import matplotlib.pyplot as plt
