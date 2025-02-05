@@ -1,4 +1,5 @@
 # Averege over 10 HCACF data files with different initial conditions (different random seed numbers).
+# The aim is to create "avereged_HCACF.dat" file.
 
 fID1 = open("HCACF.dat")
 
@@ -185,7 +186,7 @@ fID = open("avereged_HCACF.dat","w")
 time_in_fs = [t * 0.001 for t in time]
 
 for i in range(200):
-    fID.write("{} {}".format(time[i], Jy[i]))
+    fID.write("{} {}".format(time_in_fs[i], Jy[i]))
 
 fID.close()
 
