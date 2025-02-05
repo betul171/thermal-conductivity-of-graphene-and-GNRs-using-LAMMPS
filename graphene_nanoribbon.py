@@ -36,6 +36,13 @@ variable    ir equal 8000     # Equilibration run
 # variable    r equal 100000     # Run
 # variable    ir equal 10000     # Equilibration run 
 
+### below parameters give a good HCACF decay
+variable    p equal 200        # correlation length
+variable    s equal 10          # sample interval
+variable    d equal $p*$s       # dump interval
+variable    r equal 10000     # Run
+variable    ir equal 35000     # Equilibration run 
+
 variable    kB equal 1.3806504e-23    # [J/K] Boltzmann
 variable    eV2J equal 1.60217663e-19
 variable    A2m equal 1.0e-10
