@@ -1,5 +1,6 @@
 # Averege over 10 HCACF data files with different initial conditions (different random seed numbers).
 # The aim is to create "avereged_HCACF.dat" file.
+### Finally, compute thermal conductivity.
 
 fID1 = open("HCACF.dat")
 
@@ -189,5 +190,38 @@ for i in range(200):
     fID.write("{} {}".format(time_in_ps[i], Jy[i]))
 
 fID.close()
+
+
+T = 300
+kB = 1.3806504e-23  # Boltzmann constant [J/K]
+eV2J = 1.60217663e-19  # eV to J conversion factor
+A2m = 1.0e-10  # Angstrom to meter conversion factor
+ps2s = 1.0e-12  # picoseconds to seconds conversion factor
+
+
+dt = 0.001  # time step
+p = 200  # correlation length
+s = 10  # sample interval
+d = p * s  # dump interval
+r = 10000  # Run
+ir = 35000  # Equilibration run
+
+x_0 = -1
+x_f = 15
+y_0 = 0
+y_f = 25
+x = x_f - x_0
+y = y_f - y_0
+thickness = 3.35
+V = x * y * thickness
+
+convert = eV2J * eV2J / (ps2s * A2m)
+scale = convert / (kB * T * T * V * s * dt)
+
+# Numerically integrate Jy using the trapezoidal rule
+integrated_Jy = np.trapz(Jy, time_in_ps)
+
+thermal_conductivity = integrated_Jy * scale # along y
+
 
 
