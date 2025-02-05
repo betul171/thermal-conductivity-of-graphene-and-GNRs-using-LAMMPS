@@ -183,10 +183,10 @@ for i in range(200):
 
 fID = open("avereged_HCACF.dat","w")
 
-time_in_fs = [t * 0.001 for t in time]
+time_in_ps = [t * 0.001 for t in time]  ## in ps right???
 
 for i in range(200):
-    fID.write("{} {}".format(time_in_fs[i], Jy[i]))
+    fID.write("{} {}".format(time_in_ps[i], Jy[i]))
 
 fID.close()
 
