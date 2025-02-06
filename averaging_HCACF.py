@@ -1,6 +1,7 @@
 # Averege over 10 HCACF data files with different initial conditions (different random seed numbers).
 # The aim is to create "avereged_HCACF.dat" file.
 ### Finally, compute thermal conductivity.
+# Here gnr is zigzag edged and along y-direction.
 
 import numpy as np
 
