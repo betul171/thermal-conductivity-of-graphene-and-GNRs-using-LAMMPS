@@ -2,7 +2,9 @@
 # The aim is to create "avereged_HCACF.dat" file.
 ### Finally, compute thermal conductivity.
 
-fID1 = open("HCACF.dat")
+import numpy as np
+
+fID1 = open("HCACF1.dat")
 
 # Read all lines from the file
 lines1 = fID1.readlines()
@@ -184,13 +186,12 @@ for i in range(200):
 
 fID = open("avereged_HCACF.dat","w")
 
-time_in_ps = [t * 0.001 for t in time]  ## in ps right???
+time_in_ps = [t * 0.001 for t in time] # in ps right???
 
 for i in range(200):
     fID.write("{} {}".format(time_in_ps[i], Jy[i]))
 
 fID.close()
-
 
 T = 300
 kB = 1.3806504e-23  # Boltzmann constant [J/K]
@@ -206,22 +207,30 @@ d = p * s  # dump interval
 r = 10000  # Run
 ir = 35000  # Equilibration run
 
+# Define variables
 x_0 = -1
 x_f = 15
 y_0 = 0
-y_f = 25
+y_f = 251
 x = x_f - x_0
 y = y_f - y_0
 thickness = 3.35
 V = x * y * thickness
 
-convert = eV2J * eV2J / (ps2s * A2m)
-scale = convert / (kB * T * T * V * s * dt)
 
-# Numerically integrate Jy using the trapezoidal rule
-integrated_Jy = np.trapz(Jy, time_in_ps)
+convert = eV2J * eV2J / ps2s / A2m
+scale = convert / kB / T / T / V * s * dt
 
-thermal_conductivity = integrated_Jy * scale # along y
+integrated_Jy = np.trapz(Jy)
+
+
+thermal_conductivity = integrated_Jy * scale
+print(thermal_conductivity)
+
+
+
+
+
 
 
 
