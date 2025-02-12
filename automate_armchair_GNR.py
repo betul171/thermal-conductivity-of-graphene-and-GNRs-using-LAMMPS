@@ -57,7 +57,7 @@ group fixed_atoms union fixed_atoms1 fixed_atoms2
 
 pair_style airebo 3.0
 pair_coeff * * CH.airebo C
-minimize 1.0e-25 1.0e-25 5000 10000
+minimize 1.0e-6 1.0e-8 1000 10000
 timestep ${dt}
 thermo $d
 thermo_style custom step temp pe ke etotal
