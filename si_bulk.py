@@ -1,4 +1,5 @@
 # Calculate the thermal conductivity of silicon bulk.
+# This script is adapted from an example input script from the official LAMMPS documentation.
 
 from lammps import lammps
 
