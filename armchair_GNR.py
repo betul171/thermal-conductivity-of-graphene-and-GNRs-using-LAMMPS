@@ -1,4 +1,5 @@
 ### Calculating thermal conductivity of armchair GNR.
+# This script is adapted from an example input script from the official LAMMPS documentation.
 
 from lammps import lammps
 
