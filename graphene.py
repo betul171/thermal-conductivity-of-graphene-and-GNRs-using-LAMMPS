@@ -1,4 +1,5 @@
 ## calculate thermal conductivity of graphene with lammps
+# This script is adapted from an example input script from the official LAMMPS documentation.
 
 from lammps import lammps
 
