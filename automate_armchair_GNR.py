@@ -1,4 +1,5 @@
 # The LAMMPS script runs for 10 different random seed numbers, and generates a HCACF file for each seed.
+# This script is adapted from an example input script from the official LAMMPS documentation.
 
 from lammps import lammps
 
